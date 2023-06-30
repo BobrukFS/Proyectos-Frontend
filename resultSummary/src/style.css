@@ -1,0 +1,217 @@
+:root {
+    --primary : hsl(0, 100%, 67%);
+    --secondary : hsl(39, 100%, 56%);
+    --terciary : hsl(166, 100%, 37%);
+    --quaternary : hsl(234, 85%, 45%);
+    --white :hsl(0, 0%, 100%);
+    --paleBlue : hsl(221, 100%, 96%);
+    --lightLavender : hsl(241, 100%, 89%);
+    --gray : hsl(224, 30%, 27%);
+    --fsbody : 18px;
+    --font : 'Hanken';
+}
+
+@font-face {
+    font-family: 'Hanken';
+    src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1,h2,h3, p {
+    margin: 0rem;
+    font-family: var(--font);
+}
+
+.resume {
+   width: 100%;
+}
+
+.resume__score {
+    color: var(--white);
+    background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    border-radius: 0 0 3rem 3rem;
+    padding: 2rem 6rem 3rem;
+    text-align: center;
+}
+
+.score__h1{
+    font-size: 1.8rem;
+    color: var(--lightLavender);
+    margin: 1rem 0rem 2rem;
+}
+
+.score__circle{
+    margin: auto auto;
+    width: fit-content;
+    padding: 3rem 4rem;
+    border-radius: 50%;
+    background: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0) );
+
+}
+
+.score__porcentage{
+    font-size: 6rem;
+    line-height: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+.score__h3 {
+    margin: 2rem 0rem 1rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.score__paragraphs{
+    font-size: 1.6rem;
+    color: var(--lightLavender);
+}
+
+.resume__summary {
+    text-align: start;
+    padding: 3rem;
+    font-size: 1.6rem
+}
+
+.summary__h2 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    color: var(--gray);
+}
+
+.summary__skill{
+    display: flex;
+    margin: 1.5rem auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.summary__img {
+    margin-right: 1.5rem;
+}
+
+.summary__p:nth-child(3){
+    color: var(--gray);
+    margin: auto 0rem auto auto;
+}
+
+.summary__p > span {
+    color: var(--lightLavender);
+    font-weight: 500;
+}
+
+.summary__skill--reaction {
+    color: var(--primary);
+    font-weight: 700;
+    background-color: hsla(0, 100%, 67%, 0.1);
+    
+}
+
+.summary__skill--memory {
+    color: var(--secondary);
+    font-weight: 700;
+    background-color:hsla(39, 100%, 56%, 0.1);
+}
+
+.summary__skill--verbal {
+    color: var(--terciary);
+    font-weight: 700;
+    background-color:hsla(166, 100%, 37%,0.1);
+}
+
+.summary__skill--visual {
+    color: var(--quaternary);
+    font-weight: 700;
+    background-color:hsla(234, 85%, 45%,0.1);
+    margin-bottom: 4rem;
+}
+
+
+.summary__btn {
+    margin: -1rem auto auto;
+    background-color: var(--gray);
+    border: none;
+    border-radius: 5rem;
+    width: 100%;
+    padding: 1.8rem;
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+@media (min-width: 1024px) { 
+   
+    body {
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .resume {
+        display: flex;
+        max-width: 100rem;
+        justify-content: center;
+        
+    }
+
+    .resume > section {
+        border-radius: 3rem;
+        flex: 0 0 calc(40%);
+    }
+
+    .resume__score {
+        padding: 4rem 6rem 4rem;
+    }
+
+    .score__h1{
+        font-size: 2rem;
+        margin: 1rem 0rem 4rem;
+    }
+    
+    .score__circle{
+        padding: 4rem 5rem;
+    }
+    
+    .score__porcentage{
+        font-size: 7rem;
+        margin-bottom: 2rem;
+    }
+    
+    .score__h3 {
+        margin: 4rem 0rem 3rem;
+        font-size: 2.6rem;
+        font-weight: 700;
+    }
+    .score__paragraphs{
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+
+        color: var(--lightLavender);
+    }
+
+    .summary__h2 {
+        font-size: 2rem;
+        margin: 1.5rem 0rem 4rem;
+        color: var(--gray);
+    }
+
+    .summary__btn {
+        margin: -1rem auto auto;
+        background-color: var(--gray);
+        border: none;
+        border-radius: 5rem;
+        width: 100%;
+        padding: 1.8rem;
+        color: var(--white);
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+}

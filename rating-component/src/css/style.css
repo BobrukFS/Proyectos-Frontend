@@ -1,0 +1,123 @@
+:root {
+    --orange : hsl(25, 97%, 53%);
+    --White: hsl(0, 0%, 100%);
+    --Light : hsl(220, 3%, 83%);
+    --Medium : hsl(210, 5%, 30%);
+    --Dark-Blue: hsl(215, 20%, 16%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+    --font:'Overpass', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h2, p {
+    margin: 0;
+    font-family: var(--font);
+    padding: 0;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+}
+
+.rating {
+
+    width: 90%;
+    background-color: var(--Dark-Blue);
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto auto;
+    max-width: 45rem;
+}
+
+.rating__h2 {
+    font-size: 2.6rem;
+    color: var(--White);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.rating__icon {
+    background-color: var(--Medium);
+    padding: 1.3rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.rating__p {
+    color: var(--Light);
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.rating__list {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.rating__value-btn {
+    color: var(--Light);
+    background-color: var(--Medium);
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 50%;
+    padding: 2.1rem 1.6rem;
+    line-height: 0;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.rating__value-btn.active {
+    background-color: var(--orange);
+    color: var(--White);
+}
+
+.btn {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: var(--Light);
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 10rem;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+    
+}
+
+.btn.active {
+    background-color: var(--orange);
+}
+
+.btn > p {
+   height: 1.5rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.rating__value-btn:hover {
+    background-color: var(--Light);
+    color: var(--White);
+    cursor: pointer;
+}
