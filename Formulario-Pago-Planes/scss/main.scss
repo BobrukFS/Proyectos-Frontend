@@ -1,0 +1,123 @@
+@use "variables.scss" as variables;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+body {
+    background-color: map-get(variables.$colores, Magnolia);
+    font-family: map-get(variables.$fuentes, ubuntu );
+}
+
+.form-steps {
+    background-image: url(../assets/images/bg-sidebar-mobile.svg);
+    height: 17.2rem;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+
+    ul {
+
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+       align-items: start;
+        padding: 0;
+        margin-top: 3.5rem;
+     
+
+        li {
+            border: 1px solid white;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            padding: .7rem 1.2rem;
+            background-color: transparent;
+            color: white;
+            font-weight: 700;
+
+            &:hover, &:focus {
+                background-color: map-get(variables.$colores , Light-blue );
+                color: blue;
+                border-color: map-get(variables.$colores ,Light-blue);
+            }
+        }
+    }
+}
+
+
+.form {
+   background-color: white;
+   position: relative;
+   top: -7.2rem;
+   margin: 0rem 1rem;
+   border-radius: 1rem;
+   padding: 2rem 1rem;
+
+  
+
+   &__group {
+    border: none;
+
+    p {
+        color: map-get(variables.$colores , Cool-gray );
+        margin: 1.5rem 0rem 2rem;
+    }
+   }
+
+   &__title{
+    font-size: 3rem;
+    color: map-get(variables.$colores , Marine-blue );
+    font-weight: bold;
+}
+
+   &__label {
+    display: block;
+    font-size: 1.5rem;
+    margin: 1.5rem 0rem;
+    color: map-get(variables.$colores , Purplish-blue);
+    font-weight: 700;
+
+    input {
+        margin-top: .2rem;
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border : 1px solid map-get(variables.$colores , Light-gray);
+        font-size: 1.4rem;
+        outline: none;
+    }
+   }
+
+  
+}
+
+.form-footer {
+    display: flex;
+    justify-content: end;
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+
+    &__btn {
+        background-color: map-get(variables.$colores , Marine-blue );
+        border: none;
+        border-radius: .5rem;
+        color: map-get(variables.$colores ,  Alabaster);
+        padding: 1rem 1.5rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}
