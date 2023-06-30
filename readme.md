@@ -1,4 +1,4 @@
-Proyectos semanales para aplicar mis conocimientos en front-end ⭐
+⭐ Proyectos semanales para aplicar mis conocimientos en Front-end ⭐
 ---
 
 |  Nombre  |Tecnologias usadas| Caracteristicas | Etapa de desarrollo |
