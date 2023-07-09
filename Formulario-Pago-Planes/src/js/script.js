@@ -1,3 +1,6 @@
+
+
+
 let buttonNext = document.getElementsByClassName("form-footer__btn-next");
 let steps = document.getElementsByClassName("form-header__item");
 let formFooter = document.getElementsByClassName("form-footer");
@@ -17,10 +20,11 @@ let formPrice = document.getElementsByClassName("form-body__price");
 let formPriceAdd = document.getElementsByClassName("form-body__priceAddsons");
 let formPlanTitle = document.getElementsByClassName("form-body__planTitle");
 let formAddsons = document.getElementsByClassName("form-body__input--addons");
-
+let error = document.getElementsByClassName("error");
 let active1 = "desactive";
 let active2 = "desactive";
 let active3 = "desactive";
+let finalizar;
 let now1 = "visible";
 let now2 = "now";
 let inputName;
@@ -32,6 +36,7 @@ let totalPlan = 9;
 let total = 0;
 let time = "mo";
 let time2 = "per mounth";
+
 
 
 
@@ -55,7 +60,7 @@ for(let i = 0; i < buttonNext.length ; i++){
            
             
 
-        } else if (dataAddsons. classList == "active") {
+        } else if (dataAddsons.classList == "active") {
             resume.classList = "active";
             dataAddsons.classList = "desactive";
             resume.innerHTML = `
@@ -100,13 +105,52 @@ for(let i = 0; i < buttonNext.length ; i++){
         </div>
         <div class="form-footer">
             <button class="form-footer__btn-back" type="button">Atras</button>
-            <button class="form-footer__btn-next" type="button">Finalizar</button>
+            <button class="form-footer__btn-next finalizar" type="button">Finalizar</button>
         </div>
             `
 
             steps[2].classList.remove("color");
             steps[3].classList.add("color");
-            
+            let finalizar = document.getElementsByClassName("finalizar");
+            finalizar[0].addEventListener("click", ()=>{
+                const datos = {
+                    total: total,
+                    totalPlan: totalPlan,
+                    inputName: inputName,
+                    inputMail: inputMail,
+                    inputPhone: inputPhone,
+                    time : time
+                  };
+                
+                  fetch('http://localhost:3000/datos', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(datos),
+                  })
+                    .then((response) => response.json())
+                    .then((data) => {
+                      console.log('Respuesta del servidor:', data);
+                      // Realiza acciones adicionales según sea necesario
+                    })
+                    .catch((error) => {
+                      console.error('Error al enviar los datos al servidor:', error);
+                    });
+
+                    resume.innerHTML = `
+                        <div class="confirm"> 
+                            <div>
+                                <h2>Su pago se ha procesado con exito</h2>
+                                <img src="assets/images/checked.png">
+                                <p>Recibira un correo a <span>${inputMail}</span> con el resumen</p>
+                            </div>
+                         
+                        </div>
+                    `
+                    
+            });
+
             buttonBack[2].addEventListener("click", ()=>{
 
                 resume.classList = "desactive";
@@ -114,10 +158,11 @@ for(let i = 0; i < buttonNext.length ; i++){
                 steps[3].classList.remove("color");
                 steps[2].classList.add("color");
             });
-       
-        }
-       
-}
+            
+           
+        } 
+      
+    }
 
     )};
 
@@ -268,3 +313,20 @@ function limpiar(a){
         }
     }
 }
+
+buttonNext[0].addEventListener("click", ()=>{
+    for(let i = 0; i < inputElement.length; i++){
+        if(!inputElement[i].validity.valid){
+            error[i].style.display = "block";
+            inputElement[i].style.border = "2px solid red";
+            inputElement[i].style.outline = "none";
+        } else if (inputElement[i].validity.valid){
+            error[i].style.display = "none";
+            inputElement[i].style.backgroundColor = "hsl(217, 100%, 97%)";
+            inputElement[i].style.border = "2px solid  hsl(243, 100%, 62%)";
+        }
+    }
+});
+
+
+

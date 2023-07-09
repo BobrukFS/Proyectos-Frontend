@@ -114,7 +114,7 @@
         width: 100%;
 
         &:focus {
-            outline: 1px solid map-get(variables.$colores ,  Purplish-blue);
+            outline: 2px solid map-get(variables.$colores ,  Purplish-blue);
         }
 
         &--addons {
@@ -347,4 +347,63 @@
 
 .visible {
     color: map-get(variables.$colores ,  Marine-blue);
+}
+
+.errorDesactive {
+    display: none;
+}
+
+.error{
+    margin: 0rem .5rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: map-get(variables.$colores , Strawberry-red );
+}
+
+
+.confirm {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 3rem;
+   display: flex;
+   flex-direction: column;
+   
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: map-get(variables.$colores , Alabaster );
+        padding: 2rem;
+        height: 100%;
+        border-radius: .7rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    p{
+        font-weight: 500;
+        font-size: 1.5rem;
+        color : map-get(variables.$colores , Cool-gray );
+
+        span {
+            color : map-get(variables.$colores , Purplish-blue);
+            font-weight: 500;
+        }
+    }
+    img {
+        width: 12rem;
+        padding: 1rem;
+        background-color: white;
+        margin: 2rem 0rem;
+        border-radius: 50%;
+    }
 }

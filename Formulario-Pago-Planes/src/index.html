@@ -35,11 +35,14 @@
                 <h2 class="form-body__title">Personal info</h2>
                 <p class="form-body__desc">Please provide your name, email address, and phone number.</p>
                 <label for="name" class="form-body__label"> Name<input id="name" type="text" class="form-body__input"
-                        placeholder="e.g. Stephen King"  maxlength="25" ></label>
+                        placeholder="e.g. Stephen King" required maxlength="25" ></label>
+                <p class="errorDesactive error">Porfavor escriba su nombre</p>
                 <label for="mail" class="form-body__label"> Email address<input id="mail" type="email"
-                        class="form-body__input"  placeholder="e.g. stephenking@lorem.com"  maxlength="64"></label>
-                <label for="phone" class="form-body__label"> Phone Number <input id="phone"  type="tel" class="form-body__input"
-                        placeholder="e.g. 1135667337"   maxlength="10" minlength="10"></label>
+                        class="form-body__input"  placeholder="e.g. stephenking@lorem.com" required maxlength="64"></label>
+                        <p class="errorDesactive error">Porfavor escriba su email</p>
+                        <label for="phone" class="form-body__label"> Phone Number <input id="phone"  type="tel" class="form-body__input"
+                        placeholder="e.g. 1135667337"  required maxlength="10" minlength="10"></label>
+                        <p class="errorDesactive error">Porfavor escriba su numero de telefono</p>
             </div>
             <div class="form-footer">
               
@@ -106,7 +109,8 @@
     </div>
 
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" type="module"></script>
+
 </body>
 
 </html>
