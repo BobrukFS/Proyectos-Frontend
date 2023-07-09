@@ -1,172 +1,275 @@
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
-h1, h2, h3, p {
-  margin: 0;
-}
-
-p {
-  font-size: 1.6rem;
-  color: hsl(231deg, 11%, 63%);
-}
-
-fieldset {
-  padding: 0;
-}
-
-body {
-  background-color: hsl(217deg, 100%, 97%);
-  font-family: Ubuntu;
-}
-
-main {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  background-color: hsl(217deg, 100%, 97%);
+  font-family: Ubuntu;
 }
 
-.form-steps {
+/* Header del formulario */
+.form-header {
   background-image: url(../assets/images/bg-sidebar-mobile.svg);
   min-height: 17.2rem;
   display: flex;
   justify-content: center;
   background-size: cover;
 }
-.form-steps ul {
+.form-header ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
   align-items: start;
   padding: 0;
-  margin-top: 3.5rem;
+  margin-top: 3rem;
 }
-.form-steps ul li {
+.form-header__item {
   border: 1px solid white;
   border-radius: 50%;
   font-size: 1.4rem;
-  padding: 0.7rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   background-color: transparent;
   color: white;
   font-weight: 700;
 }
-.form-steps ul li:hover, .form-steps ul li:focus {
+.form-header__item.color {
   background-color: hsl(206deg, 94%, 87%);
-  color: blue;
-  border-color: hsl(206deg, 94%, 87%);
 }
 
-.form {
+/*Body del formulario*/
+.form-body {
   background-color: white;
+  margin: 0rem 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
   position: absolute;
   top: 10rem;
-  margin: 0rem 2rem;
-  border-radius: 1rem;
-  padding: 2rem 2rem;
 }
-.form__group {
-  border: none;
+.form-body__title {
+  font-size: 2.3rem;
 }
-.form__p {
-  margin: 1.5rem 0rem 2rem;
+.form-body__desc {
+  font-size: 1.6rem;
+  color: hsl(231deg, 11%, 63%);
 }
-.form__title {
-  font-size: 3rem;
-  color: hsl(213deg, 96%, 18%);
-  font-weight: bold;
-}
-.form__label {
+.form-body__label {
   display: block;
-  font-size: 1.5rem;
-  margin: 1.5rem 0rem;
-  color: hsl(243deg, 100%, 62%);
-  font-weight: 700;
-}
-.form__label--checkbox {
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 9fr;
-  border: 1.5px solid hsl(229deg, 24%, 87%);
-  align-items: center;
-  border-radius: 1rem;
-}
-.form__label--checkbox:hover {
-  border: 1.5px solid hsl(243deg, 100%, 62%);
-}
-.form__label--checkbox span {
   font-size: 1.4rem;
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+  margin: 1rem 0rem;
+}
+.form-body__label--addons {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  background-color: hsl(217deg, 100%, 97%);
+  border: 1px solid hsl(243deg, 100%, 62%);
+  border-radius: 0.7rem;
+  padding: 1.2rem;
+  font-weight: 700;
+  align-items: center;
+  gap: 0 1rem;
+}
+.form-body__label--addons span {
   color: hsl(231deg, 11%, 63%);
   font-weight: 400;
-  margin: 0;
-  grid-column: 2/3;
+  font-size: 1.3rem;
+  grid-row: 2/3;
 }
-.form__label .form__price {
+.form-body__label--addons span:nth-child(2) {
   color: hsl(243deg, 100%, 62%);
-  grid-column: 5/7;
+  font-weight: 500;
   grid-row: 1/3;
-  font-size: 1.4rem;
 }
-.form__input {
-  margin-top: 0.2rem;
+.form-body__input {
   display: block;
-  width: 100%;
-  padding: 1rem 1.5rem;
   border: 1px solid hsl(229deg, 24%, 87%);
-  font-size: 1.4rem;
-  outline: none;
+  padding: 0.7rem 1.2rem;
   border-radius: 0.5rem;
+  font-weight: 500;
+  width: 100%;
 }
-.form__input--checkbox {
-  width: 2rem;
-  order: -1;
-  margin-right: 1rem;
+.form-body__input:focus {
+  outline: 1px solid hsl(243deg, 100%, 62%);
+}
+.form-body__input--addons {
+  grid-column: 1/2;
   grid-row: 1/3;
-}
-
-.form-option {
-  display: flex;
+  border-radius: 0.5rem;
+  padding: 0;
+  -webkit-appearance: none;
+  width: 2rem;
+  height: 2rem;
+  outline: 0;
+  flex-grow: 0;
+  vertical-align: middle;
   border: 1px solid hsl(229deg, 24%, 87%);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  background-color: #FFFFFF;
+  transition: background 300ms;
+  cursor: pointer;
 }
-.form-option:hover {
-  border: 1px solid hsl(243deg, 100%, 62%);
+.form-body__input--addons:focus {
+  outline: none;
 }
-.form-option__h3 {
-  font-size: 1.5rem;
+.form-body__input--addons:checked {
+  background-color: hsl(243deg, 100%, 62%);
+  color: white;
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+}
+.form-body__article {
+  display: flex;
+  gap: 2rem;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+.form-body__article h3 {
+  font-size: 1.6rem;
+  color: hsl(213deg, 96%, 18%);
   font-weight: 700;
-  color: hsl(243deg, 100%, 62%);
-  margin-bottom: 0.5rem;
 }
-.form-option__p {
+.form-body__article.check {
+  border: 2px solid #0F1C2E;
+}
+.form-body__price {
+  font-size: 1.4rem;
+  color: hsl(231deg, 11%, 63%);
+  font-weight: 500;
+}
+.form-body__price span {
+  display: block;
+  color: hsl(213deg, 96%, 18%);
+  font-size: 1.3rem;
+}
+.form-body__resume {
+  background-color: hsl(231deg, 100%, 99%);
+  border-radius: 0.7rem;
+  padding: 1.5rem;
+  color: hsl(231deg, 11%, 63%);
+  font-weight: 500;
+  margin: 1.5rem 0rem;
+  font-size: 1.4rem;
+}
+.form-body__add {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.form-body__add--total {
+  padding-top: 1rem;
+  border-top: 1px solid hsl(229deg, 24%, 87%);
+}
+.form-body__add .form-body__resumeP :nth-child(2) {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 500;
+}
+.form-body__add.desactive {
+  display: none;
+}
+.form-body__add:nth-child(1) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid hsl(229deg, 24%, 87%);
+}
+.form-body__add:nth-child(1) .form-body__resumeP {
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 700;
+}
+.form-body__data {
+  padding: 0rem 1rem;
+}
+.form-body__data p {
+  color: hsl(231deg, 11%, 63%);
   font-size: 1.4rem;
   font-weight: 500;
 }
+.form-body__data p span {
+  color: hsl(213deg, 96%, 18%);
+}
 
+.active {
+  display: block;
+}
+
+.desactive {
+  display: none;
+}
+
+.plan-time {
+  display: flex;
+  background-color: hsl(231deg, 100%, 99%);
+  justify-content: center;
+  margin: 3rem auto 1rem;
+  width: 100%;
+  padding: 1.5rem;
+  gap: 2rem;
+  border-radius: 0.7rem;
+}
+.plan-time__p:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: hsl(213deg, 96%, 18%);
+}
+.plan-time__p:nth-child(3) {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: hsl(231deg, 11%, 63%);
+}
+.plan-time__btn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0rem 0.5rem;
+  background-color: hsl(213deg, 96%, 18%);
+  width: 4rem;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.plan-time__circle {
+  color: white;
+  font-size: 1.2rem;
+  transform: translateX(-4px);
+  transition: all 0.5s ease;
+}
+.plan-time__circle.trans {
+  transform: translateX(14px);
+}
+
+/* Footer del formulario */
 .form-footer {
   display: flex;
-  justify-content: end;
   background-color: white;
-  justify-self: end;
   width: 100%;
   padding: 1rem;
 }
-.form-footer__btn {
+.form-footer__btn-next {
   background-color: hsl(213deg, 96%, 18%);
   border: none;
   border-radius: 0.5rem;
   color: hsl(231deg, 100%, 99%);
   padding: 1rem 1.5rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
+  margin: 0 0 0 auto;
+}
+.form-footer__btn-back {
+  border: none;
+  border-radius: 0.5rem;
+  color: hsl(231deg, 11%, 63%);
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  align-self: start;
+  background-color: white;
+}
+
+.now {
+  display: none;
+}
+
+.visible {
+  color: hsl(213deg, 96%, 18%);
 }
 
 /*# sourceMappingURL=style.css.map */

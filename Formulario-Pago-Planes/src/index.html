@@ -1,56 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/002d43efc8.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/002d43efc8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Form Steps Sub</title>
 </head>
 
 <body>
 
-    <main>
+    <div class="container">
 
-        <div class="form-steps">
+        <div class="form-header">
             <ul>
-                <li class="form-steps__item">1</li>
-                <li class="form-steps__item">2</li>
-                <li class="form-steps__item">3</li>
-                <li class="form-steps__item">4</li>
+                <li class="form-header__item color">1</li>
+                <li class="form-header__item">2</li>
+                <li class="form-header__item">3</li>
+                <li class="form-header__item">4</li>
             </ul>
         </div>
 
 
+    <div id="main">
+ 
+        <form action="" id="data-personal" class="active">
+            <div class="form-body">
+                <h2 class="form-body__title">Personal info</h2>
+                <p class="form-body__desc">Please provide your name, email address, and phone number.</p>
+                <label for="name" class="form-body__label"> Name<input id="name" type="text" class="form-body__input"
+                        placeholder="e.g. Stephen King"  maxlength="25" ></label>
+                <label for="mail" class="form-body__label"> Email address<input id="mail" type="email"
+                        class="form-body__input"  placeholder="e.g. stephenking@lorem.com"  maxlength="64"></label>
+                <label for="phone" class="form-body__label"> Phone Number <input id="phone"  type="tel" class="form-body__input"
+                        placeholder="e.g. 1135667337"   maxlength="10" minlength="10"></label>
+            </div>
+            <div class="form-footer">
+              
+                <button class="form-footer__btn-next" type="button">Siguiente</button>
+            </div>
+        </form>
 
-        <div class="card">
-            <form class="form">
-                <fieldset class="form__group">
-                    <legend class="form__title">Personal info</legend>
-                    <p class="form__p">Please provide your name, email, address, and phone number</p>
-                    <label for="" class="form__label">Nombre <input class="form__input" type="text" placeholder="e.g. Stephen King"></label>
-                    <label for="" class="form__label">Direccion Email <input type="email" class="form__input" 
-                            placeholder="e.g. stephenking@gmail.com"></label>
-                    <label for="" class="form__label">Numero de telefono <input class="form__input"  type="tel"
-                            placeholder="e.g. +54 11 41872049"></label>
-                </fieldset>
-            </form>
+        <section id="suscripcion" class="desactive">
+            <div class="form-body">
+                <h2 class="form-body__title">Select your plan</h2>
+                <p class="form-body__desc">You have the option of monthly or yearly billing</p>
+                <article class="form-body__article check"><img src="assets/images/icon-arcade.svg" alt="icon-arcade">
+                    <div>
+                    <h3 class="form-body__planTitle">Arcade</h3>
+                    <p class="form-body__price">$9/mo</p>
+                </div>
+                </article>
+                <article class="form-body__article"><img src="assets/images/icon-advanced.svg" alt="icon-advanced"><div><h3 class="form-body__planTitle">Advanced</h3><p class="form-body__price">$12/mo</p></div></article>
+                <article class="form-body__article"><img src="assets/images/icon-pro.svg" alt="icon-pro"><div><h3 class="form-body__planTitle">Pro</h3><p class="form-body__price">$15/mo</p></div></article>
+                
+                <div class="plan-time">
+                    <p class="plan-time__p">Monthly</p>
+                    <div class="plan-time__btn">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/021/115/771/small/white-circle-free-png.png" width="20px"  alt="circle" class="plan-time__circle">
+                    </div>
+                    <p class="plan-time__p">Yearly</p>
+                </div>
+
+            </div>
+            <div class="form-footer">
+                <button class="form-footer__btn-back" type="button">Atras</button>
+                <button class="form-footer__btn-next" type="button">Siguiente</button>
+            </div>
+
+        </section>
+
+
+        
+     <form action="" id="adds-ons" class="desactive">
+        <div class="form-body">
+
+
+            <h2 class="form-body__title">Pick add-ons</h2>
+            <p class="form-body__desc">Add-ons help enhance your gaming experience</p>
+            <label for="" class="form-body__label form-body__label--addons"> Online service <span>Access to multiplayer games</span> <span class="form-body__priceAddsons">+$1/mo</span><input type="checkbox" class="form-body__input form-body__input--addons"
+              ></label>
+            <label for="" class="form-body__label form-body__label--addons"> Larger storage <span>Extra 1TB of cloud save</span> <span class="form-body__priceAddsons">+$2/mo</span><input  type="checkbox"
+                    class="form-body__input form-body__input--addons" ></label>
+            <label for="" class="form-body__label form-body__label--addons"> Customizable profile <span>Custom theme on your profile</span><span class="form-body__priceAddsons">+$2/mo</span><input type="checkbox" class="form-body__input form-body__input--addons"
+                    ></label>
         </div>
-
-
-
         <div class="form-footer">
-            <button class="form-footer__btn">Siguiente</button>
+            <button class="form-footer__btn-back" type="button">Atras</button>
+            <button class="form-footer__btn-next" type="button">Siguiente</button>
         </div>
 
-    </main>
+    </form>
 
-    <script src="scripts/script.js"></script>
+    <section id="resume" class="desactive">
+       
+
+    </section>
+
+    </div>
+
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
