@@ -7,7 +7,7 @@ const cors = require('cors');
 
 app.use(cors());
 // Configura la clave de la API de SendGrid
-sgMail.setApiKey('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');
+sgMail.setApiKey('');
 
 app.use(express.json());
 
@@ -25,7 +25,7 @@ app.post('/datos', (req, res) => {
   // Configura el mensaje de correo electrónico
   const msg = {
     to: inputMail, // Dirección de correo electrónico del destinatario
-    from: 'bobrukfs@gmail.com', // Dirección de correo electrónico del remitente
+    from: '', // Dirección de correo electrónico del remitente
     subject: 'Registro de pago', // Asunto del correo electrónico
     text: `Muchas gracias ${inputName} por realizar el pago. A continuacion dejamos el resumen:
     Total a pagar: $${total + totalPlan}.
