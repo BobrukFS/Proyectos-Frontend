@@ -1,6 +1,6 @@
 # Formulario de suscripcion en pasos
 
-Un formulario simple creado con HTML, CSS, y Javascript que ademas utiliza la API de Sendgrid.
+Un formulario simple creado con HTML, CSS, y Javascript que ademas utiliza la API de Sendgrid. Ademas, es responsive web.
 
 ## Vista previa
 
