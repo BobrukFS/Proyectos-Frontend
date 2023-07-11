@@ -18,6 +18,8 @@ let article = document.getElementsByClassName("form-body__article");
 let check = document.getElementsByClassName("check");
 let formPrice = document.getElementsByClassName("form-body__price");
 let formPriceAdd = document.getElementsByClassName("form-body__priceAddsons");
+let labelAdd = document.getElementsByClassName("form-body__label--addons");
+
 let formPlanTitle = document.getElementsByClassName("form-body__planTitle");
 let formAddsons = document.getElementsByClassName("form-body__input--addons");
 let error = document.getElementsByClassName("error");
@@ -141,13 +143,18 @@ for(let i = 0; i < buttonNext.length ; i++){
                     resume.innerHTML = `
                         <div class="confirm"> 
                             <div>
-                                <h2>Su pago se ha procesado con exito</h2>
+                                <h2>Su solicitud se ha procesado con exito</h2>
                                 <img src="assets/images/checked.png">
                                 <p>Recibira un correo a <span>${inputMail}</span> con el resumen</p>
                             </div>
                          
                         </div>
                     `
+
+                    steps[0].classList.add("color");
+                    steps[1].classList.add("color");
+                    steps[2].classList.add("color");
+                    steps[3].classList.add("color");
                     
             });
 
@@ -256,24 +263,30 @@ for(let i = 0; i < formAddsons.length; i++){
     if (!formAddsons[i].classList.contains("on")){
         formAddsons[i].classList.add("on");
         if (formAddsons[i] === formAddsons[0]){
+            labelAdd[i].classList.add("checked");
             active1 = "active1";
             total += suma(formPriceAdd[0].textContent);
         } else if(formAddsons[i] === formAddsons[1]){
+            labelAdd[i].classList.add("checked");
             active2 = "active2";
             total += suma(formPriceAdd[1].textContent);
         } else if (formAddsons[i] === formAddsons[2]){
+            labelAdd[i].classList.add("checked");
             active3 = "active3";
             total += suma(formPriceAdd[2].textContent);
         }
     } else {
         formAddsons[i].classList.remove("on");
         if (formAddsons[i] === formAddsons[0]){
+            labelAdd[i].classList.remove("checked");
             active1 = "desactive";
             total -= suma(formPriceAdd[0].textContent);
         } else if(formAddsons[i] === formAddsons[1]){
+            labelAdd[i].classList.remove("checked");
             active2 = "desactive";
             total -= suma(formPriceAdd[1].textContent);
         } else if (formAddsons[i] === formAddsons[2]){
+            labelAdd[i].classList.remove("checked");
             active3 = "desactive";
             total -= suma(formPriceAdd[2].textContent);
     }
