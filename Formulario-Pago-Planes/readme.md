@@ -1,6 +1,5 @@
-# Readme
-<video src="src/assets/linkedinForm.mp4" >
+# Formulario de suscripcion en pasos
 
-</video>
+## Vista previa
 
-<img src="src/assets/>
+![Texto alternativo](https://github.com/BobrukFS/Proyectos-Frontend/blob/main/Formulario-Pago-Planes/src/assets/linkedinForm.gif)
