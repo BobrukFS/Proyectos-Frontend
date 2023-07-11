@@ -1,6 +1,6 @@
 # Componente dinamico de resultados de examen
 
-Este componente es un resumen que se actualiza dinamicamente al recibir los resultados de un examen.
+Este componente es un resumen que se actualiza dinamicamente al recibir los resultados de un examen. Esta construido con HTML, CSS y JS. Ademas, es responsive web.
 
 ## Vista previa
 
